@@ -112,19 +112,24 @@ EJERCICIO 6 :
 bool HasLowHealthPlayer( int[] healthValues)
 {
 
-    for (int i = 0; i < healthValues.Length; i++)
+    for (int i = 0; i < healthValues.Length; i++)  //1, N+1, 1
     {
-      int health = healthValues[i];
+      int health = healthValues[i]; // 1
       {
-      if (health < 30)
+      if (health < 30)  //1, N
         {
-          Debug. Log("Low health detected");
+          Debug. Log("Low health detected");  // 1, 
         }
       }
-        return true;
+        return true; //1
     }
 return false;
 }
+for interno
+1+N+1+N+1+N+1+1
+
+T(N) = 3N + 7
+O(N) = N
 
 
 
