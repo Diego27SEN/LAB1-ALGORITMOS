@@ -1,0 +1,152 @@
+EJERCICIO 1:
+
+int SumScores(int[] scores)
+{
+int sum = 0; //1
+
+for (int i = 0; i < scores.Length; i++)   // 1, N+1, N
+{
+    sum += scores[i]; //2, 1 ,N
+}
+
+return sum; // 1
+}
+
+for interno
+1+1+(N+1)+N+2+N+1
+3N+6
+
+T(N)=3N+6
+O(N)=N
+
+
+
+
+EJERCICIO 2 :
+
+void ComparePlayers(List<GameObject> players)
+{
+    for (int i = 0; i < players. Count; i++) // 1, N+1, N
+    {
+      for (int j = i + 1; j < players.Count; j++)   // 1, N+1, N
+      {
+        Debug. Log(players [i].name + " vs " +____________);  //1, N, 1, 1
+      }
+    }
+}
+
+for interno
+1+(2N+1)+N
+
+
+
+
+EJERCICIO 3 :
+
+int CalculateInteractionScore(int[ ] players )
+{
+    int score = 0;     //1
+    for (int i = 0; i < players. Length; i++)    // 1,  N+1,  N
+    {
+          for (int j = i + 1; j < players.Length; j++)   //1, N+1, N
+           {
+            int interaction = players[i] + players[j];   //1, N, 1 ,N
+            score += interaction;    // 2
+           }
+    }
+    return score; //1
+}
+for interno
+
+1+N+1+N+1+N+1+N
+N(6 +4N)
+6N + 4N^2
+4N^2 + 6
+
+1+1+N+1+N+4N^2+6N+1
+4N^2+8N+4
+T(N)=4N^2+8N+4
+O(N)=N^2
+
+
+EJERCICIO 4 :
+
+int CalculateFinalDamage(int attack, int defense, float multiplier)
+{
+
+  int baseDamage = attack - defense;
+  int finalDamage = (int)(baseDamage * multiplier);
+
+  if (finalDamage < 0)
+  {
+  
+  finalDamage = 0;
+  
+  }
+  return finalDamage;
+}
+
+
+
+
+EJERCICIO 5 :
+
+bool CanCastSpell(int mana, int cost)
+{
+    int remainingMana = mana - cost;
+    if (remainingMana >= 0)
+    {
+      Debug. Log("Spell casted");
+      return true;
+    }
+   return false;
+}
+
+
+
+
+
+
+EJERCICIO 6 :
+
+bool HasLowHealthPlayer( int[] healthValues)
+{
+
+    for (int i = 0; i < healthValues.Length; i++)
+    {
+      int health = healthValues[i];
+      {
+      if (health < 30)
+        {
+          Debug. Log("Low health detected");
+        }
+      }
+        return true;
+    }
+return false;
+}
+
+
+
+
+
+
+
+EJERCICIO 7 :
+
+int CountStrongerPairs(int[] powerLevels)
+{
+
+    int count = 0;
+    
+    for (int i = 0; i < powerLevels.Length; i++)
+    {
+            for (int j = 0; j < powerLevels.Length; j++)
+            {
+            if (powerLevels[i] > powerLevels[j])
+            }
+          count++;
+        }
+    }
+    return count;
+}
