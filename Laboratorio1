@@ -2,17 +2,17 @@ EJERCICIO 1:
 
 int SumScores(int[] scores)
 {
-int sum = 0; //1
+int sum = 0; //+1  asignacion
 
-for (int i = 0; i < scores.Length; i++)   // 1, N+1, N
+for (int i = 0; i < scores.Length; i++)   // +1 init + (N+1) comparacion + N incremento
 {
-    sum += scores[i]; //2, 1 ,N
+    sum += scores[i]; // +2 incremento y asignamiento + N indice
 }
 
-return sum; // 1
+return sum; // + 1
 }
 
-for interno
+
 1+1+(N+1)+N+2+N+1
 3N+6
 
@@ -26,17 +26,30 @@ EJERCICIO 2 :
 
 void ComparePlayers(List<GameObject> players)
 {
-    for (int i = 0; i < players. Count; i++) // 1, N+1, N
+    for (int i = 0; i < players. Count; i++) //  1+ asignamiento + (N+1) comparacion + N incremento
     {
-      for (int j = i + 1; j < players.Count; j++)   // 1, N+1, N
+      for (int j = i + 1; j < players.Count; j++)   //  +1 + N indice + 1 asignamiento + (N+1) comparacion + N incremento
       {
-        Debug. Log(players [i].name + " vs " +____________);  //1, N, 1, 1
+        Debug. Log(players [i].name + " vs " +____________);  //+1 + N indice +1 incremento + 1 incremento
       }
     }
 }
 
-for interno
-1+(2N+1)+N
+
+forInterno
+
+2N+3+N +3
+N(3N + 6)
+3N² + 6N
+
+forExterno
+
+2N+2+(3N^2+6N)
+3N^2+8N+2
+
+T(N) = 3N^2+8N+2
+O(N) = N^2
+
 
 
 
@@ -45,23 +58,27 @@ EJERCICIO 3 :
 
 int CalculateInteractionScore(int[ ] players )
 {
-    int score = 0;     //1
-    for (int i = 0; i < players. Length; i++)    // 1,  N+1,  N
+    int score = 0;     //+1 asignamiento
     {
-          for (int j = i + 1; j < players.Length; j++)   //1, N+1, N
+    for (int i = 0; i < players. Length; i++)    //   +1 incremento + (N+1)comparacion + N incremento
+    {
+          for (int j = i + 1; j < players.Length; j++)   // +1 asignamiento + (N+1) comparacion + N
            {
-            int interaction = players[i] + players[j];   //1, N, 1 ,N
-            score += interaction;    // 2
+            int interaction = players[i] + players[j];   // +1 asignamiento + N + 1 por incremento + N
+            score += interaction;    // +1 incremento + 1 asignacion
            }
     }
-    return score; //1
+    return score; //+1 
 }
-for interno
+
+forInterno
 
 1+N+1+N+1+N+1+N
 N(6 +4N)
 6N + 4N^2
 4N^2 + 6
+
+for externo
 
 1+1+N+1+N+4N^2+6N+1
 4N^2+8N+4
@@ -74,17 +91,23 @@ EJERCICIO 4 :
 int CalculateFinalDamage(int attack, int defense, float multiplier)
 {
 
-  int baseDamage = attack - defense;
-  int finalDamage = (int)(baseDamage * multiplier);
+  int baseDamage = attack - defense;  // +1 asignamiento + 1 disminucion
+  int finalDamage = (int)(baseDamage * multiplier);  // +1 asignamiento + 1 multiplicacion
 
-  if (finalDamage < 0)
+  if (finalDamage < 0)     //+1 comparacion
   {
   
-  finalDamage = 0;
+  finalDamage = 0;       //+1 asignamiento
   
   }
-  return finalDamage;
+  return finalDamage;    //+1
 }
+
+1 + 1 + 1 +1 +1 +1 +1
+T(N) = 7
+O(N) = 1
+
+
 
 
 
@@ -93,15 +116,20 @@ EJERCICIO 5 :
 
 bool CanCastSpell(int mana, int cost)
 {
-    int remainingMana = mana - cost;
-    if (remainingMana >= 0)
+    int remainingMana = mana - cost;    // +1 asignamiento + 1 disminuye
+    if (remainingMana >= 0)           //+1 comparacion + 1 asignamiento
     {
-      Debug. Log("Spell casted");
-      return true;
+      Debug. Log("Spell casted");        // +1 
+      return true;        // +1 
     }
-   return false;
+   return false;        //+1 
 }
 
+
+1 + 1 + 2 + 1 + 1 + 1
+
+T(N) = 7
+O(N) = 1
 
 
 
@@ -112,20 +140,21 @@ EJERCICIO 6 :
 bool HasLowHealthPlayer( int[] healthValues)
 {
 
-    for (int i = 0; i < healthValues.Length; i++)  //1, N+1, 1
+    for (int i = 0; i < healthValues.Length; i++)      //+1 signamiento + (N+1) comparacion + N incremento
     {
-      int health = healthValues[i]; // 1
+      int health = healthValues[i];     //+1 asignamiento + N indice
       {
-      if (health < 30)  //1, N
+      if (health < 30)  //+1 comparacion
         {
-          Debug. Log("Low health detected");  // 1, 
+          Debug. Log("Low health detected");  // +1, 
         }
       }
-        return true; //1
+        return true;     //+1
     }
-return false;
+return false;     //+1
 }
-for interno
+
+
 1+N+1+N+1+N+1+1
 
 T(N) = 3N + 7
@@ -142,16 +171,30 @@ EJERCICIO 7 :
 int CountStrongerPairs(int[] powerLevels)
 {
 
-    int count = 0;
+    int count = 0;      //+1 asignamiento
     
-    for (int i = 0; i < powerLevels.Length; i++)
+    for (int i = 0; i < powerLevels.Length; i++)    //+1 asignamiento + (N+1) comparacion + N incremento
     {
-            for (int j = 0; j < powerLevels.Length; j++)
+            for (int j = 0; j < powerLevels.Length; j++)        //+1 asignamiento + (N+1) comparacion + N incremento
             {
-            if (powerLevels[i] > powerLevels[j])
+            if (powerLevels[i] > powerLevels[j])        // +N indice + 1 comparacion + N indice
             }
-          count++;
+          count++;     //+N
         }
     }
-    return count;
+    return count;      //+1
 }
+
+for Interno
+
+2N+2+(2N+1)+N
+N(5N+3)
+5N^2+3N
+
+for externo
+
+1+2N+2(5N+3N)+1
+5N^2+5N+4
+
+T(N) = 5N^2+5N+4
+O(N) = N^2
